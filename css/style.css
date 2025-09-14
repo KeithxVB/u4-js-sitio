@@ -199,5 +199,9 @@ background-image: url("../media/banner.jpg");
   text-align: left; 
 }
 
-
-
+.botones-operaciones {
+  margin-top: 10px;
+  display: flex;
+  justify-content: left;
+  gap: 10px; 
+}

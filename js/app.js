@@ -16,6 +16,26 @@ function multiplicar(a, b) {
     return a * b;
 }
 
+const btnSumar = document.getElementById("btnSumar");
+const btnMultiplicar = document.getElementById("btnMultiplicar");
+
+if (btnSumar && btnMultiplicar) {
+    btnSumar.addEventListener("click", () => {
+        const a = parseFloat(document.getElementById("numA").value);
+        const b = parseFloat(document.getElementById("numB").value);
+        document.getElementById("resultadoOperacion").innerText =
+            `Resultado de sumar: ${sumar(a, b)}`;
+    });
+
+    btnMultiplicar.addEventListener("click", () => {
+        const a = parseFloat(document.getElementById("numA").value);
+        const b = parseFloat(document.getElementById("numB").value);
+        document.getElementById("resultadoOperacion").innerText =
+            `Resultado de multiplicar: ${multiplicar(a, b)}`;
+    });
+}
+
+
 let salida = document.getElementById("salida");
 if(salida) {
     salida.innerText = `Bienvenido a ${APP_NOMBRE} v${APP_VERSION} - ${ANIO}`;
