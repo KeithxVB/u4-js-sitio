@@ -46,3 +46,5 @@ Este proyecto consiste en la creación de un sitio web con HTML, CSS y JavaScrip
 <img src="screenshots/Cap16.png" alt="Captura 16" width="300"/>
 <img src="screenshots/Cap17.png" alt="Captura 17" width="300"/>
 <img src="screenshots/Cap18.png" alt="Captura 18" width="300"/>
+<img src="screenshots/Cap19.png" alt="Captura 19" width="300"/>
+<img src="screenshots/Cap20.png" alt="Captura 10" width="300"/>
