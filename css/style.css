@@ -127,15 +127,15 @@ input[type="text"]:focus, input[type="number"]:focus {
 }
 
 ul {
-  list-style: none; /* quita viñetas */
+  list-style: none; 
   padding: 0;
   margin-top: 2%;
   text-align: center;
 }
 
 ul li::before {
-  content: "❀ ";       /* Agrega tu propia viñeta */
-  color: #FB6C90;      /* Color que combine */
+  content: "❀ ";       
+  color: #FB6C90;      
   font-weight: bold;
 }
 
