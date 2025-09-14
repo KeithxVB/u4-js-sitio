@@ -1,0 +1,203 @@
+
+
+@font-face {
+  font-family: "FontCustom1";
+  src: url("/fonts/Tox Typewriter.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FontCustom2";
+  src: url("/fonts/IMFePIrm29P.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  background-color: #7B583D;
+}
+
+
+body {
+  font-family: "FontCustom1", Tox Typewriter, serif;
+  background-color: #F6F1CD;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;  
+  min-height: 100vh; 
+}
+
+main {
+  flex: 1; 
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  font-size: 150%;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  transition: background 0.3s;
+  text-align: center;
+}
+
+nav a:hover,
+nav a:focus {
+  color: black;
+  background: #FEFF60;
+  text-align: center;
+}
+
+nav a.activo {
+  color: black;
+  background: #FEFF60;
+  font-weight: bold;
+}
+
+footer {
+  color: white;
+  background-color: #7B583D;  
+  width: 100%;                  
+  padding: 10px 0;            
+  text-align: center;    
+  font-size: 150%; 
+  margin-top: 10%;      
+}
+
+.marginForm{
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.textMargin > * {
+    margin-bottom: 1%;
+}
+
+.invalid {
+  border: 1px solid #b00020;
+  box-shadow: 0 0 0 3px rgba(176, 0, 32, 0.07);
+}
+#errores ul { margin:6px 0 0 18px; padding:0; }
+
+button {
+  font-family: "FontCustom1", Tox Typewriter, serif;
+  font-size: 16px; 
+  font-weight: bold; 
+  background-color: #FBC0C0; 
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #FB5490;
+}
+
+input[type="text"], input[type="number"] {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: "FontCustom1", Tox Typewriter, serif;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+  border-color: #FB6C90;
+  box-shadow: 0 0 6px rgba(251,108,144,0.6);
+  outline: none;
+}
+
+.clock{
+  color:white;
+  font-size: 300%;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none; /* quita viñetas */
+  padding: 0;
+  margin-top: 2%;
+  text-align: center;
+}
+
+ul li::before {
+  content: "❀ ";       /* Agrega tu propia viñeta */
+  color: #FB6C90;      /* Color que combine */
+  font-weight: bold;
+}
+
+.inicio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  gap: 20px;
+}
+
+.inicio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  margin: 20px auto;
+  max-width: 900px;
+  border-radius: 12px;
+  color: white; 
+  text-align: center;
+
+background-image: url("../media/banner.jpg");
+  background-size: cover; 
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.inicio-content {
+  background: rgba(0, 0, 0, 0.5); 
+  padding: 20px;
+  border-radius: 8px;
+}
+
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  gap: 20px;
+}
+
+
+.card-img img {
+  max-width: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.card-content {
+  flex: 1;              
+  text-align: left; 
+}
+
+
+

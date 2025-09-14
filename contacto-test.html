@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prueba Contacto</title>
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;padding:20px}
+    .form {display:block;margin:6px 0;padding:6px;width:100%;max-width:420px}
+    .error{color:#b00020;font-size:0.9rem;margin-top:2px;display:block}
+    .invalid{border:1px solid #b00020;box-shadow:0 0 0 3px rgba(176,0,32,0.07)}
+    #errores{margin-top:10px;font-weight:600}
+  </style>
+</head>
+<body>
+  <h1>Contacto — prueba</h1>
+
+  <form id="formContacto" novalidate>
+    <label>Nombre:</label>
+    <input id="nombre" class="form" type="text" />
+    <small id="error-nombre" class="error"></small>
+
+    <label>Email:</label>
+    <input id="email" class="form" type="email" />
+    <small id="error-email" class="error"></small>
+
+    <label>Mensaje:</label>
+    <textarea id="mensaje" class="form" rows="4"></textarea>
+    <small id="error-mensaje" class="error"></small>
+
+    <button type="submit" class="form">Enviar</button>
+  </form>
+
+  <p id="errores" style="color:red"></p>
+  <ul id="listaNotas"></ul>
+
+  <script>
+    // DEBUG: confirma que el script se ejecutó
+    console.log('DEBUG: contacto-test script loaded');
+
+    (function () {
+      // Elementos
+      const form = document.getElementById('formContacto');
+      const nombre = document.getElementById('nombre');
+      const email = document.getElementById('email');
+      const mensaje = document.getElementById('mensaje');
+      const erroresGlobal = document.getElementById('errores');
+      const errorNombre = document.getElementById('error-nombre');
+      const errorEmail = document.getElementById('error-email');
+      const errorMensaje = document.getElementById('error-mensaje');
+      const listaNotas = document.getElementById('listaNotas');
+
+      if (!form) {
+        console.error('DEBUG ERROR: no se encontró el formulario (id formContacto)');
+        return;
+      }
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      form.addEventListener('submit', function (e) {
+        console.log('DEBUG: submit event fired');
+        e.preventDefault(); // <-- si este no se ejecuta, la página recargará
+
+        // reset
+        erroresGlobal.textContent = '';
+        errorNombre.textContent = '';
+        errorEmail.textContent = '';
+        errorMensaje.textContent = '';
+        nombre.classList.remove('invalid');
+        email.classList.remove('invalid');
+        mensaje.classList.remove('invalid');
+
+        const errores = [];
+
+        if (nombre.value.trim() === '') {
+          errores.push('Ingresa tu nombre.');
+          errorNombre.textContent = 'Ingresa tu nombre.';
+          nombre.classList.add('invalid');
+        }
+        const emailVal = email.value.trim();
+        if (emailVal === '') {
+          errores.push('Ingresa tu email.');
+          errorEmail.textContent = 'Ingresa tu email.';
+          email.classList.add('invalid');
+        } else if (!emailRegex.test(emailVal)) {
+          errores.push('Formato de email inválido.');
+          errorEmail.textContent = 'Formato de email inválido. Ej: usuario@dominio.com';
+          email.classList.add('invalid');
+        }
+        if (mensaje.value.trim() === '') {
+          errores.push('Escribe un mensaje.');
+          errorMensaje.textContent = 'Escribe un mensaje.';
+          mensaje.classList.add('invalid');
+        }
+
+        if (errores.length > 0) {
+          erroresGlobal.style.color = 'red';
+          erroresGlobal.innerHTML = '<ul><li>' + errores.join('</li><li>') + '</li></ul>';
+          console.log('DEBUG: form has errors -> prevented submit');
+          return;
+        }
+
+        // Simular envío:
+        const li = document.createElement('li');
+        li.textContent = `Nombre: ${nombre.value.trim()} — Email: ${emailVal} — Mensaje: ${mensaje.value.trim()}`;
+        listaNotas.appendChild(li);
+        erroresGlobal.style.color = 'green';
+        erroresGlobal.textContent = 'Mensaje enviado (simulado).';
+        form.reset();
+        console.log('DEBUG: form processed OK');
+      });
+    })();
+  </script>
+</body>
+</html>
