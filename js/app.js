@@ -16,6 +16,11 @@ function multiplicar(a, b) {
     return a * b;
 }
 
+let salida = document.getElementById("salida");
+if(salida) {
+    salida.innerText = `Bienvenido a ${APP_NOMBRE} v${APP_VERSION} - ${ANIO}`;
+}
+
 let totalVisitasElem = document.getElementById("totalVisitas");
 if (localStorage.getItem("visitas")) {
     contadorVisitas = parseInt(localStorage.getItem("visitas"));
